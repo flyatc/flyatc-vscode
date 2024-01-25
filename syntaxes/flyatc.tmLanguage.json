@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "FlyATC",
+  "patterns": [
+    {
+      "include": "#keywords"
+    }
+  ],
+  "injectionSelector": "L:source.yaml",
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control",
+          "begin": "({{[-_]?\\s*?(~|=)?)",
+          "end": "([-_]?}})",
+          "contentName": "meta.embedded.block.javascript",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        },
+        {
+          "name": "yaml.flyatc",
+          "include": "source.yaml"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.flyatc"
+}

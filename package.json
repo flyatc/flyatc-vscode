@@ -1,0 +1,48 @@
+{
+  "name": "flyatc",
+  "displayName": "FlyATC",
+  "description": "Language highlighting for FlyATC configurations",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "author": {
+    "name": "Matt Oliver",
+    "email": "mjo2089@gmail.com"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "flyatc",
+        "aliases": [
+          "FlyATC",
+          "flyatc"
+        ],
+        "extensions": [
+          ".flyatc"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "flyatc",
+        "scopeName": "source.flyatc",
+        "path": "./syntaxes/flyatc.tmLanguage.json",
+        "injectTo": [
+          "source.yaml"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.flyatc": "eta",
+          "meta.embedded.block.javascript": "source.js"
+        },
+        "tokenTypes": {
+          "meta.embedded.block.javascript": "other"
+        }
+      }
+    ]
+  }
+}
